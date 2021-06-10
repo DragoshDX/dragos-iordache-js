@@ -14,11 +14,9 @@
   <title>Inline JavaScript</title>
 </head>
 
-<body onload="console.log(prompt('Care este numele tau'));">
-
-
+<body onload="alert('Bine ai venit pe acest site');">
   <button
-    onclick="alert('BIne ai venit la Pixellab!');"
+    onclick="alert('Bine ai venit la Pixellab!');"
     type="button"
   >Hello!</button>
 
@@ -28,6 +26,22 @@
     type="button"
     onclick="alert('Bine ai apasat pe acest buton');"
   >Click</button>
+
+  <br>
+
+
+  <button
+    type="button"
+    onclick="console.log(20 + 156);"
+  >Calculeaza suma</button>
+
+  <br>
+
+  <button
+    type="button"
+    onmouseover="console.log('Apasa-ma!');"
+    onclick="alert('m-ai apast');"
+  >Apasa-ma</button>
 </body>
 
 </html>
