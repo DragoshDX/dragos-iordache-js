@@ -50,3 +50,23 @@ for (let i = 0; i < skillsLength; i++) {
     console.log(skillName);
   }
 }
+
+console.warn(
+  ' Folosind un for afiseaza propozitia: "Prietenii mei se numesc xxx yyy, xxx yyy, xxx yyy."',
+);
+const friendsLength = person.friends.length;
+// v1
+let message = 'Prietenii mei se numesc ';
+for (let i = 0; i < friendsLength; i++) {
+  const friend = person.friends[i];
+  let punctuation = ', ';
+  // friend.name === person.friends[i].name
+  message += `${friend.name} ${friend.surname}`;
+
+  if (i === friendsLength - 1) {
+    punctuation = '.';
+  }
+
+  message += punctuation;
+}
+console.log(message);
