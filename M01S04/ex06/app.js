@@ -70,3 +70,46 @@ for (let i = 0; i < friendsLength; i++) {
   message += punctuation;
 }
 console.log(message);
+// v2
+message = 'Prietenii mei se numesc ';
+for (let i = 0; i < friendsLength; i++) {
+  const { name, surname } = person.friends[i];
+  // friend.name friend.age friend.surname
+  // name = friend.name
+  // surname = friend.surname
+  let punctuation = ', ';
+
+  if (i === friendsLength - 1) {
+    punctuation = '.';
+  }
+
+  message = `${message}${name} ${surname}${punctuation}`;
+}
+console.log(message);
+
+console.warn(
+  'Folosind un for, afiseaza numarul total de ani pe care il au persoanele din arrayul friends, doar daca varsta este mai mare sau egala cu 30 de ani.',
+);
+let totalYears = 0;
+// v1
+for (let i = 0; i < friendsLength; i++) {
+  if (person.friends[i].age >= 30) {
+    totalYears += person.friends[i].age;
+  }
+}
+console.log(totalYears);
+// v2
+totalYears = 0;
+for (let i = 0; i < friendsLength; i++) {
+  const { age } = person.friends[i];
+  // age = person.friends[i].age;
+  totalYears += age >= 30 ? age : 0;
+}
+console.log(totalYears);
+
+console.warn('Folosind un for, afiseaza suma anilor de nastere a persoanelor.');
+let sumBirthYears = 0;
+for (let i = 0; i < friendsLength; i++) {
+  sumBirthYears += 2021 - person.friends[i].age;
+}
+console.log(sumBirthYears);
