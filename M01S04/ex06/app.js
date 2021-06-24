@@ -3,7 +3,7 @@ const person = {
   surname: 'Iordache',
   age: 32,
   petOwner: false,
-  skils: [
+  skills: [
     'html',
     'javascript',
     'css',
@@ -31,3 +31,22 @@ const person = {
     },
   ],
 };
+
+console.warn(
+  'Folosind obiectul person si un for, afiseaza in consola skillurile de pe pozitiile pare ale arrayului.',
+);
+for (let i = 0; i < person.skills.length; i++) {
+  if (i % 2 === 0) {
+    console.log(person.skills[i]);
+  }
+}
+
+const skillsLength = person.skills.length;
+console.warn('In mod similar, afiseaza skillurile care NU incep cu j.');
+for (let i = 0; i < skillsLength; i++) {
+  const skillName = person.skills[i];
+
+  if (skillName[0] !== 'j') {
+    console.log(skillName);
+  }
+}
