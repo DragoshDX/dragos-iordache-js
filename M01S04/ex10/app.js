@@ -57,3 +57,46 @@ person.friends.forEach(function (friend, i, friends) {
   sentence += `${name} ${surname}${punctuation}`;
 });
 console.log(sentence);
+
+console.warn(
+  'Afiseaza fraza: "Intre Dragos si Larry este o diferenta de xx ani. Intre Dragos si Steven... "',
+);
+sentence = '';
+person.friends.forEach(function ({ name, age }, i, friends) {
+  // v2 const name = friend.name
+  const ageDiff = Math.abs(person.age - age);
+  sentence += `Intre ${
+    person.name
+  } si ${name} este o diferenta de ${ageDiff} ani.${
+    i === friends.length - 1 ? '' : ' '
+  }`;
+});
+console.log(sentence.trim());
+
+console.warn(
+  'Folosind metoda reverse si apoi forEach, afiseaza in ordine inversa elementele arrayului skills.',
+);
+// reverse mutates
+person.skills
+  .slice()
+  .reverse()
+  .forEach(function (skill) {
+    console.log(skill);
+  });
+// person.skill.reverse()
+
+console.warn('In mod similar, afiseaza skillurile care nu incep cu j.');
+//v1
+person.skills.forEach(function (skill) {
+  if (!skill.startsWith('j')) {
+    console.log(skill);
+  }
+});
+//v2
+person.skills.forEach((skill) => {
+  if (skill[0] === 'j') {
+    return;
+  }
+
+  console.log(skill);
+});
