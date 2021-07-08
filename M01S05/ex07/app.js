@@ -13,3 +13,9 @@ const dateBuilder = [
 dateBuilder[3] = function () {
   return 'Joi';
 };
+
+console.warn('Afiseaza propozitia: “Suntem in anul an.”.');
+console.log(`Suntem in anul ${dateBuilder[0]()}.`);
+
+console.warn(`Suntem in luna ll in anul aa.`);
+console.log(`Suntem in luna ${dateBuilder[1]()} in anul ${dateBuilder[0]()}.`);
